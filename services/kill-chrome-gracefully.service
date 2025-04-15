@@ -1,0 +1,13 @@
+[Unit]
+Description=Help Chrome close gracefully
+DefaultDependencies=no
+Before=shutdown.target
+
+[Service]
+Type=oneshot
+User=root
+Group= root
+ExecStart=killall chrome --wait
+
+[Install]
+WantedBy=halt.target reboot.target shutdown.target
