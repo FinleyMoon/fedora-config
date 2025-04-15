@@ -35,6 +35,9 @@ this script needs some extra files and directories to be in the same directory a
 *   `services/kill-chrome-gracefully.service` (systemd unit file)
 *   `udev/netmd.rules` (udev rule file)
 *   `udev/92-viia.rules` (udev rule file)
+*   `Templates` (directory with all the templates)
+
+the easiest way to achieve this is to do `git clone`
 
 ## usage
 
