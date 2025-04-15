@@ -276,8 +276,7 @@ main () {
         echo "Setting up graceful Chrome shutdown service..."
 		cp "$SCRIPT_DIR/services/kill-chrome-gracefully.service" /etc/systemd/system/
 		systemctl daemon-reload # Reload systemd to recognize the new service
-		systemctl enable kill-chrome-gracefully.service # Enable to start on boot
-		systemctl start kill-chrome-gracefully.service # Start it now
+		systemctl enable kill-chrome-gracefully.service # Enable it
         echo "Graceful Chrome shutdown service enabled and started."
 	fi
 
