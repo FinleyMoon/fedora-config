@@ -79,7 +79,7 @@ ask_questions () {
 	read install_guiconf
 	install_guiconf=$(check $install_guiconf)
 
-	echo install more apps: cartriges, prism launcher, ocrfeeder, shortwave, impression, vaults, bottles, upscaler, drawing, switcheroo, prusaslicer, pdf arranger, signal, amberol, etc? [y/n]
+	echo install more apps: cartriges, prism launcher, ocrfeeder, shortwave, impression, vaults, bottles, upscaler, pinta, switcheroo, prusaslicer, pdf arranger, signal, etc? [y/n]
 	read install_other_apps
 	install_other_apps=$(check $install_other_apps)
 
@@ -233,6 +233,11 @@ main () {
         echo "Installing creative applications..."
 		dnf install rawtherapee inkscape -y
 		flatpak install flathub org.gimp.GIMP org.kde.krita fr.handbrake.ghb -y
+	fi
+	
+	if [[ $install_other_apps = "y" ]]; then
+        echo "Installing creative applications..."
+		flatpak install flathub page.kramo.Cartridges org.prismlauncher.PrismLauncher flathub org.gnome.OCRFeeder de.haeckerfelix.Shortwave io.gitlab.adhami3310.Impression io.github.mpobaschnig.Vaults com.usebottles.bottles io.gitlab.theevilskeleton.Upscaler com.github.PintaProject.Pinta io.gitlab.adhami3310.Converter com.prusa3d.PrusaSlicer com.github.jeromerobert.pdfarranger org.signal.Signal com.jeffser.Alpaca com.rtosta.zapzap org.gnome.Papers com.github.huluti.Curtail
 	fi
 
 
