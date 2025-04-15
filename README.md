@@ -30,12 +30,12 @@ this script helps you:
 
 this script needs some extra files and directories to be in the same directory as the script itself when you run it:
 
-*   `burn-my-windows/` (directory with gnome extension config)
-*   `tiling-assistant/` (directory with gnome extension config)
-*   `services/kill-chrome-gracefully.service` (systemd unit file)
-*   `udev/netmd.rules` (udev rule file)
-*   `udev/92-viia.rules` (udev rule file)
-*   `Templates` (directory with all the templates)
+*   `burn-my-windows/` (directory with gnome extension config. needed for if installing extensions)
+*   `tiling-assistant/` (directory with gnome extension config. also needed if installing extensions)
+*   `services/kill-chrome-gracefully.service` (systemd unit file. needed if the corresponding option is selected)
+*   `udev/netmd.rules` (udev rule file to write to sony netmd players. needed if installing udev rules)
+*   `udev/92-viia.rules` (udev rule file for configuring VIIA keyboards. needed if installing udev rules)
+*   `Templates` (directory with all the templates. needed if the corresponding option is selecter)
 
 the easiest way to achieve this is to do `git clone`
 
