@@ -140,7 +140,7 @@ dnf_setup () {
 	echo "Ensuring RPM Fusion repositories are installed..."
 	dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 	echo "Ensuring OpenH264 repository is enabled..."
-	dnf config-manager --set-enabled fedora-cisco-openh264 -y # Use --set-enabled for idempotency
+	dnf config-manager setopt fedora-cisco-openh264.enabled=1 #works like this
 }
 
 
@@ -166,7 +166,7 @@ main () {
 
 	echo "Setting up Flatpak..."
 	flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-	flatpak remote-delete --force fedora # Add --force to suppress error if it doesn't exist
+	flatpak remote-delete fedora
 	dnf_setup # Always run dnf_setup
 
 
