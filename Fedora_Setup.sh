@@ -200,7 +200,7 @@ main () {
 
 	if [[ $install_basic_apps = "y" ]]; then
         echo "Installing basic applications..."
-		dnf install google-chrome-stable gnome-tweaks telegram-desktop mpv steam -y
+		dnf install google-chrome-stable gnome-tweaks telegram-desktop mpv steam fastfetch hyfetch cowsay lolcat -y
 		dnf install https://github.com/TheAssassin/AppImageLauncher/releases/download/v2.2.0/appimagelauncher-2.2.0-travis995.0f91801.x86_64.rpm -y || echo "Warning: Failed to install AppImageLauncher. URL might be outdated or package conflict."
 		flatpak install flathub com.mattjakeman.ExtensionManager com.obsproject.Studio net.nokyan.Resources com.github.rafostar.Clapper org.gnome.SoundRecorder net.lutris.Lutris -y
 	fi
